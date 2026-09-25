@@ -47,6 +47,9 @@ details > .table-wrap { border:0; border-top:1px solid var(--line); border-radiu
 #endtoend .cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
 #endtoend .cards > article:last-child { display:none; }
 #tts .cards { grid-template-columns:repeat(5,minmax(0,1fr)); }
+#tts .card { display:flex; }
+#tts .card-body { display:flex; flex:1; flex-direction:column; }
+#tts .audio-grid { margin-top:auto; }
 .matrix-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; }
 .video-matrix { display:grid; grid-template-columns:repeat(6,minmax(235px,1fr)); min-width:1410px; }
 .matrix-head,.matrix-label { padding:12px; font-weight:750; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }

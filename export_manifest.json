@@ -1,0 +1,411 @@
+{
+  "created_at": "2026-08-27T17:09:52",
+  "source_manifest": {
+    "created_at": "2026-08-27",
+    "paper_title": "Cross Lingual Video Translation with Talking Face Synthesis: English-to-Vietnamese",
+    "clip_duration_seconds": 8,
+    "clips": [
+      {
+        "id": "vt_schools",
+        "source": "Vietnam Today",
+        "title": "Schools step up English education",
+        "url": "https://www.youtube.com/watch?v=2Nd0Xi5XeJ8",
+        "section": "00:00:30-00:00:38",
+        "file": "outputs/paper_demo_sources_20260827/web/vt_schools.mp4"
+      },
+      {
+        "id": "bbc_beach",
+        "source": "BBC News",
+        "title": "Ukraine accused of terror attack on Russian beach",
+        "url": "https://www.youtube.com/watch?v=CdZTeUbHsmQ",
+        "section": "00:00:08-00:00:16",
+        "file": "outputs/paper_demo_sources_20260827/web/bbc_beach.mp4"
+      },
+      {
+        "id": "bbc_odesa",
+        "source": "BBC News",
+        "title": "I went to a Ukraine beach as Russian sea attacks intensify",
+        "url": "https://www.youtube.com/watch?v=JNpVo-sz2tI",
+        "section": "00:01:30-00:01:35",
+        "file": "outputs/paper_demo_sources_20260827/web/bbc_odesa.mp4"
+      }
+    ],
+    "existing_processed_examples": [
+      {
+        "job_id": "20260819_174023_660180c2",
+        "source": "Vietnam Today",
+        "lip_model": "loratalk_paa",
+        "source_video": "outputs/20260819_174023_660180c2/input.mp4",
+        "final_video": "outputs/20260819_174023_660180c2/loratalk_translated_face.mp4"
+      },
+      {
+        "job_id": "20260819_103146_62071482",
+        "source": "Vietnam Today",
+        "lip_model": "latentsync_16",
+        "source_video": "outputs/20260819_103146_62071482/input.mp4",
+        "final_video": "outputs/20260819_103146_62071482/latentsync_translated_face.mp4"
+      },
+      {
+        "job_id": "20260813_163646_52a8356e",
+        "source": "BBC News",
+        "lip_model": "loratalk_paa",
+        "source_video": "outputs/20260813_163646_52a8356e/input.mp4",
+        "final_video": "outputs/20260813_163646_52a8356e/loratalk_translated_face.mp4"
+      }
+    ]
+  },
+  "run_dir": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/paper_demo_benchmark_20260827_091005",
+  "export_root": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/paper_demo_export_20260827_170952",
+  "selected_jobs": [
+    {
+      "clip": "bbc_beach",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_091005_3232f296",
+      "submitted_clip": "bbc_beach",
+      "files": {
+        "input_video": "artifacts/bbc_beach/iplap_classic/input.mp4",
+        "prepared_video": "artifacts/bbc_beach/iplap_classic/prepared_25fps.mp4",
+        "english_audio": "artifacts/bbc_beach/iplap_classic/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/bbc_beach/iplap_classic/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/bbc_beach/iplap_classic/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/bbc_beach/iplap_classic/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/bbc_beach/iplap_classic/loratalk_translated_face.mp4",
+        "face_crop_video": "artifacts/bbc_beach/iplap_classic/loratalk_face_crop.mp4",
+        "metadata": "artifacts/bbc_beach/iplap_classic/metadata.json",
+        "job_state": "artifacts/bbc_beach/iplap_classic/job_state.json",
+        "log": "artifacts/bbc_beach/iplap_classic/pipeline.log"
+      }
+    },
+    {
+      "clip": "bbc_beach",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_091005_ee3e12c6",
+      "submitted_clip": "bbc_beach",
+      "files": {
+        "input_video": "artifacts/bbc_beach/latentsync_16/input.mp4",
+        "prepared_video": "artifacts/bbc_beach/latentsync_16/prepared_25fps.mp4",
+        "english_audio": "artifacts/bbc_beach/latentsync_16/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/bbc_beach/latentsync_16/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/bbc_beach/latentsync_16/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/bbc_beach/latentsync_16/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/bbc_beach/latentsync_16/latentsync_translated_face.mp4",
+        "metadata": "artifacts/bbc_beach/latentsync_16/metadata.json",
+        "job_state": "artifacts/bbc_beach/latentsync_16/job_state.json",
+        "log": "artifacts/bbc_beach/latentsync_16/pipeline.log"
+      }
+    },
+    {
+      "clip": "bbc_beach",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_091005_7cd1d605",
+      "submitted_clip": "bbc_beach",
+      "files": {
+        "input_video": "artifacts/bbc_beach/loratalk_paa/input.mp4",
+        "prepared_video": "artifacts/bbc_beach/loratalk_paa/prepared_25fps.mp4",
+        "english_audio": "artifacts/bbc_beach/loratalk_paa/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/bbc_beach/loratalk_paa/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/bbc_beach/loratalk_paa/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/bbc_beach/loratalk_paa/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/bbc_beach/loratalk_paa/loratalk_translated_face.mp4",
+        "face_crop_video": "artifacts/bbc_beach/loratalk_paa/loratalk_face_crop.mp4",
+        "metadata": "artifacts/bbc_beach/loratalk_paa/metadata.json",
+        "job_state": "artifacts/bbc_beach/loratalk_paa/job_state.json",
+        "log": "artifacts/bbc_beach/loratalk_paa/pipeline.log"
+      }
+    },
+    {
+      "clip": "bbc_odesa",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_094435_dcba4bbb",
+      "submitted_clip": "bbc_odesa_retry",
+      "files": {
+        "input_video": "artifacts/bbc_odesa/iplap_classic/input.mp4",
+        "prepared_video": "artifacts/bbc_odesa/iplap_classic/prepared_25fps.mp4",
+        "english_audio": "artifacts/bbc_odesa/iplap_classic/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/bbc_odesa/iplap_classic/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/bbc_odesa/iplap_classic/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/bbc_odesa/iplap_classic/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/bbc_odesa/iplap_classic/loratalk_translated_face.mp4",
+        "face_crop_video": "artifacts/bbc_odesa/iplap_classic/loratalk_face_crop.mp4",
+        "metadata": "artifacts/bbc_odesa/iplap_classic/metadata.json",
+        "job_state": "artifacts/bbc_odesa/iplap_classic/job_state.json",
+        "log": "artifacts/bbc_odesa/iplap_classic/pipeline.log"
+      }
+    },
+    {
+      "clip": "bbc_odesa",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_094434_c6d487f2",
+      "submitted_clip": "bbc_odesa_retry",
+      "files": {
+        "input_video": "artifacts/bbc_odesa/latentsync_16/input.mp4",
+        "prepared_video": "artifacts/bbc_odesa/latentsync_16/prepared_25fps.mp4",
+        "english_audio": "artifacts/bbc_odesa/latentsync_16/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/bbc_odesa/latentsync_16/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/bbc_odesa/latentsync_16/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/bbc_odesa/latentsync_16/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/bbc_odesa/latentsync_16/latentsync_translated_face.mp4",
+        "metadata": "artifacts/bbc_odesa/latentsync_16/metadata.json",
+        "job_state": "artifacts/bbc_odesa/latentsync_16/job_state.json",
+        "log": "artifacts/bbc_odesa/latentsync_16/pipeline.log"
+      }
+    },
+    {
+      "clip": "bbc_odesa",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_094433_13b74432",
+      "submitted_clip": "bbc_odesa_retry",
+      "files": {
+        "input_video": "artifacts/bbc_odesa/loratalk_paa/input.mp4",
+        "prepared_video": "artifacts/bbc_odesa/loratalk_paa/prepared_25fps.mp4",
+        "english_audio": "artifacts/bbc_odesa/loratalk_paa/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/bbc_odesa/loratalk_paa/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/bbc_odesa/loratalk_paa/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/bbc_odesa/loratalk_paa/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/bbc_odesa/loratalk_paa/loratalk_translated_face.mp4",
+        "face_crop_video": "artifacts/bbc_odesa/loratalk_paa/loratalk_face_crop.mp4",
+        "metadata": "artifacts/bbc_odesa/loratalk_paa/metadata.json",
+        "job_state": "artifacts/bbc_odesa/loratalk_paa/job_state.json",
+        "log": "artifacts/bbc_odesa/loratalk_paa/pipeline.log"
+      }
+    },
+    {
+      "clip": "vt_schools",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_093447_8a8a6ad7",
+      "submitted_clip": "vt_schools_retry",
+      "files": {
+        "input_video": "artifacts/vt_schools/iplap_classic/input.mp4",
+        "prepared_video": "artifacts/vt_schools/iplap_classic/prepared_25fps.mp4",
+        "english_audio": "artifacts/vt_schools/iplap_classic/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/vt_schools/iplap_classic/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/vt_schools/iplap_classic/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/vt_schools/iplap_classic/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/vt_schools/iplap_classic/loratalk_translated_face.mp4",
+        "face_crop_video": "artifacts/vt_schools/iplap_classic/loratalk_face_crop.mp4",
+        "metadata": "artifacts/vt_schools/iplap_classic/metadata.json",
+        "job_state": "artifacts/vt_schools/iplap_classic/job_state.json",
+        "log": "artifacts/vt_schools/iplap_classic/pipeline.log"
+      }
+    },
+    {
+      "clip": "vt_schools",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_093447_c7701e2f",
+      "submitted_clip": "vt_schools_retry",
+      "files": {
+        "input_video": "artifacts/vt_schools/latentsync_16/input.mp4",
+        "prepared_video": "artifacts/vt_schools/latentsync_16/prepared_25fps.mp4",
+        "english_audio": "artifacts/vt_schools/latentsync_16/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/vt_schools/latentsync_16/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/vt_schools/latentsync_16/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/vt_schools/latentsync_16/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/vt_schools/latentsync_16/latentsync_translated_face.mp4",
+        "metadata": "artifacts/vt_schools/latentsync_16/metadata.json",
+        "job_state": "artifacts/vt_schools/latentsync_16/job_state.json",
+        "log": "artifacts/vt_schools/latentsync_16/pipeline.log"
+      }
+    },
+    {
+      "clip": "vt_schools",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_093447_d49b207d",
+      "submitted_clip": "vt_schools_retry",
+      "files": {
+        "input_video": "artifacts/vt_schools/loratalk_paa/input.mp4",
+        "prepared_video": "artifacts/vt_schools/loratalk_paa/prepared_25fps.mp4",
+        "english_audio": "artifacts/vt_schools/loratalk_paa/english_16k.wav",
+        "vietnamese_audio_raw": "artifacts/vt_schools/loratalk_paa/vietnamese_tts_raw.wav",
+        "vietnamese_audio_aligned": "artifacts/vt_schools/loratalk_paa/vietnamese_tts_aligned.wav",
+        "audio_dub_video": "artifacts/vt_schools/loratalk_paa/source_with_vietnamese_audio.mp4",
+        "final_video": "artifacts/vt_schools/loratalk_paa/loratalk_translated_face.mp4",
+        "face_crop_video": "artifacts/vt_schools/loratalk_paa/loratalk_face_crop.mp4",
+        "metadata": "artifacts/vt_schools/loratalk_paa/metadata.json",
+        "job_state": "artifacts/vt_schools/loratalk_paa/job_state.json",
+        "log": "artifacts/vt_schools/loratalk_paa/pipeline.log"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "clip": "bbc_beach",
+      "submitted_clip": "bbc_beach",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_091005_7cd1d605",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_7cd1d605/loratalk_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "bbc_beach",
+      "submitted_clip": "bbc_beach",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_091005_ee3e12c6",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_ee3e12c6/latentsync_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "bbc_beach",
+      "submitted_clip": "bbc_beach",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_091005_3232f296",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/loratalk_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_091006_ab0c4345",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091006_ab0c4345/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091006_ab0c4345/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091006_ab0c4345/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091006_ab0c4345/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/landmark/loratalk_landmark.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/renderer/paa_renderer.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091006_ab0c4345/loratalk/mouth_aperture_debug.json\n landmark_generator_model loaded from :  /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/landmark/loratalk_landmark.pth\nLoad checkpoint from: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/landmark/loratalk_landmark.pth\n renderer loaded from :  /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/renderer/paa_renderer.pth\n/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.\n  warnings.warn(\n/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.\n  warnings.warn(msg)\nPerceptual loss:\n\tMode: vgg19\nLoad checkpoint from: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/renderer/paa_renderer.pth\nReading video frames ... from /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091006_ab0c4345/prepared_25fps.mp4\nWARNING: All log messages before absl::InitializeLog() is called are written to STDERR\nI0000 00:00:1787797167.527886 2419644 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5\nI0000 00:00:1787797167.567376 2419740 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 NVIDIA 595.84), renderer: NVIDIA GeForce RTX 5070 Ti/PCIe/SSE2\nINFO: Created TensorFlow Lite XNNPACK delegate for CPU.\nTraceback (most recent call last):\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 325, in <module>\n    raise NotImplementedError  # no face in any frame\nNotImplementedError"
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_091007_e214feba",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091007_e214feba/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/.venv/bin/python -m scripts.inference --unet_config_path configs/unet/stage2_512.yaml --inference_ckpt_path checkpoints/latentsync_unet.pt --inference_steps 20 --guidance_scale 1.5 --video_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091007_e214feba/prepared_25fps.mp4 --audio_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091007_e214feba/vietnamese_tts_aligned.wav --video_out_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091007_e214feba/latentsync_raw.mp4 --temp_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091007_e214feba/latentsync_temp\nvideo in 25 FPS, audio idx in 50FPS\nAffine transforming 200 faces...\n\n  0%|          | 0/200 [00:00<?, ?it/s]\n  1%|          | 2/200 [00:00<00:10, 19.70it/s]\n 18%|█▊        | 36/200 [00:00<00:00, 204.70it/s]\n 35%|███▌      | 70/200 [00:00<00:00, 265.42it/s]\n 52%|█████▎    | 105/200 [00:00<00:00, 295.40it/s]\n 70%|██████▉   | 139/200 [00:00<00:00, 311.07it/s]\n 86%|████████▋ | 173/200 [00:00<00:00, 319.94it/s]\n100%|██████████| 200/200 [00:00<00:00, 290.63it/s]\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/scripts/inference.py\", line 129, in <module>\n    main(config, args)\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/scripts/inference.py\", line 92, in main\n    pipeline(\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py\", line 124, in decorate_context\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/latentsync/pipelines/lipsync_pipeline.py\", line 403, in __call__\n    video_frames, faces, boxes, affine_matrices = self.loop_video(whisper_chunks, video_frames)\n                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/latentsync/pipelines/lipsync_pipeline.py\", line 317, in loop_video\n    faces, boxes, affine_matrices = self.affine_transform_video(video_frames)\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/latentsync/pipelines/lipsync_pipeline.py\", line 292, in affine_transform_video\n    raise RuntimeError(\"Face not detected in the selected video segment\")\nRuntimeError: Face not detected in the selected video segment"
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_091008_f3525de5",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091008_f3525de5/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091008_f3525de5/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091008_f3525de5/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091008_f3525de5/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091008_f3525de5/loratalk/mouth_aperture_debug.json\n landmark_generator_model loaded from :  /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth\nLoad checkpoint from: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth\n renderer loaded from :  /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth\n/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.\n  warnings.warn(\n/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.\n  warnings.warn(msg)\nPerceptual loss:\n\tMode: vgg19\nLoad checkpoint from: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth\nReading video frames ... from /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091008_f3525de5/prepared_25fps.mp4\nWARNING: All log messages before absl::InitializeLog() is called are written to STDERR\nI0000 00:00:1787797290.271294 2421224 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5\nI0000 00:00:1787797290.310728 2421319 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 NVIDIA 595.84), renderer: NVIDIA GeForce RTX 5070 Ti/PCIe/SSE2\nINFO: Created TensorFlow Lite XNNPACK delegate for CPU.\nTraceback (most recent call last):\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 325, in <module>\n    raise NotImplementedError  # no face in any frame\nNotImplementedError"
+    },
+    {
+      "clip": "vt_schools",
+      "submitted_clip": "vt_schools",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_091011_7199d0d8",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_7199d0d8/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_7199d0d8/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_7199d0d8/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_7199d0d8/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/landmark/loratalk_landmark.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/renderer/paa_renderer.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_7199d0d8/loratalk/mouth_aperture_debug.json\n  2%|▏         | 4/194 [00:12<05:52,  1.85s/it]\n  3%|▎         | 5/194 [00:13<04:20,  1.38s/it]\n  3%|▎         | 6/194 [00:13<03:09,  1.01s/it]\n  4%|▎         | 7/194 [00:13<02:28,  1.26it/s]\n  4%|▍         | 8/194 [00:14<01:58,  1.57it/s]\n  5%|▍         | 9/194 [00:14<01:38,  1.88it/s]\n  5%|▌         | 10/194 [00:14<01:21,  2.26it/s]\n  6%|▌         | 11/194 [00:14<01:08,  2.67it/s]\n  6%|▌         | 12/194 [00:15<01:03,  2.85it/s]\n  7%|▋         | 13/194 [00:15<00:55,  3.27it/s]\n  7%|▋         | 14/194 [00:15<00:58,  3.08it/s]\n  8%|▊         | 15/194 [00:16<00:52,  3.40it/s]\n  8%|▊         | 16/194 [00:16<00:52,  3.40it/s]\n  9%|▉         | 17/194 [00:16<00:47,  3.75it/s]\n  9%|▉         | 18/194 [00:16<00:40,  4.35it/s]\n 10%|▉         | 19/194 [00:17<00:47,  3.68it/s]\n 10%|█         | 20/194 [00:17<00:45,  3.81it/s]\n 11%|█         | 21/194 [00:17<00:39,  4.40it/s]\n 11%|█▏        | 22/194 [00:17<00:42,  4.03it/s]\n 12%|█▏        | 23/194 [00:17<00:42,  4.06it/s]\n 12%|█▏        | 24/194 [00:18<00:40,  4.17it/s]/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/face_alignment/api.py:215: UserWarning: No faces were detected.\n  warnings.warn(\"No faces were detected.\")\n\n 12%|█▏        | 24/194 [00:18<02:09,  1.31it/s]\nTraceback (most recent call last):\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 650, in <module>\n    full = merge_face_contour_only(original_background, T_input_frame[2], T_ori_face_coordinates[2][1],fa)   #(H,W,3)\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 177, in merge_face_contour_only\n    preds = fa.get_landmarks(input_img)[0]  # 68x2\nTypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "clip": "vt_schools",
+      "submitted_clip": "vt_schools",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_091011_b5464f2f",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_b5464f2f/latentsync_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "vt_schools",
+      "submitted_clip": "vt_schools",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_091011_5f3f089e",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_5f3f089e/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_5f3f089e/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_5f3f089e/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_5f3f089e/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091011_5f3f089e/loratalk/mouth_aperture_debug.json\n  2%|▏         | 4/194 [00:12<05:54,  1.87s/it]\n  3%|▎         | 5/194 [00:13<04:21,  1.39s/it]\n  3%|▎         | 6/194 [00:13<03:11,  1.02s/it]\n  4%|▎         | 7/194 [00:13<02:29,  1.25it/s]\n  4%|▍         | 8/194 [00:14<01:59,  1.56it/s]\n  5%|▍         | 9/194 [00:14<01:38,  1.87it/s]\n  5%|▌         | 10/194 [00:14<01:21,  2.25it/s]\n  6%|▌         | 11/194 [00:15<01:09,  2.64it/s]\n  6%|▌         | 12/194 [00:15<01:04,  2.82it/s]\n  7%|▋         | 13/194 [00:15<00:55,  3.24it/s]\n  7%|▋         | 14/194 [00:15<00:59,  3.04it/s]\n  8%|▊         | 15/194 [00:16<00:53,  3.35it/s]\n  8%|▊         | 16/194 [00:16<00:53,  3.36it/s]\n  9%|▉         | 17/194 [00:16<00:48,  3.68it/s]\n  9%|▉         | 18/194 [00:16<00:41,  4.28it/s]\n 10%|▉         | 19/194 [00:17<00:48,  3.64it/s]\n 10%|█         | 20/194 [00:17<00:46,  3.77it/s]\n 11%|█         | 21/194 [00:17<00:39,  4.37it/s]\n 11%|█▏        | 22/194 [00:17<00:42,  4.00it/s]\n 12%|█▏        | 23/194 [00:18<00:42,  4.03it/s]\n 12%|█▏        | 24/194 [00:18<00:40,  4.15it/s]/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/face_alignment/api.py:215: UserWarning: No faces were detected.\n  warnings.warn(\"No faces were detected.\")\n\n 12%|█▏        | 24/194 [00:18<02:10,  1.30it/s]\nTraceback (most recent call last):\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 650, in <module>\n    full = merge_face_contour_only(original_background, T_input_frame[2], T_ori_face_coordinates[2][1],fa)   #(H,W,3)\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 177, in merge_face_contour_only\n    preds = fa.get_landmarks(input_img)[0]  # 68x2\nTypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa_retry",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_092244_dd9ac766",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092244_dd9ac766/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092244_dd9ac766/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092244_dd9ac766/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092244_dd9ac766/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/landmark/loratalk_landmark.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/renderer/paa_renderer.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092244_dd9ac766/loratalk/mouth_aperture_debug.json\n 60%|█████▉    | 116/194 [00:44<00:17,  4.56it/s]\n 60%|██████    | 117/194 [00:44<00:15,  5.05it/s]\n 61%|██████    | 118/194 [00:44<00:13,  5.49it/s]\n 61%|██████▏   | 119/194 [00:44<00:13,  5.40it/s]\n 62%|██████▏   | 120/194 [00:44<00:14,  4.95it/s]\n 62%|██████▏   | 121/194 [00:45<00:13,  5.34it/s]\n 63%|██████▎   | 122/194 [00:45<00:12,  5.68it/s]\n 63%|██████▎   | 123/194 [00:45<00:12,  5.87it/s]\n 64%|██████▍   | 124/194 [00:45<00:13,  5.05it/s]\n 64%|██████▍   | 125/194 [00:45<00:13,  5.09it/s]\n 65%|██████▍   | 126/194 [00:46<00:13,  5.11it/s]\n 65%|██████▌   | 127/194 [00:46<00:13,  5.13it/s]\n 66%|██████▌   | 128/194 [00:46<00:13,  4.78it/s]\n 66%|██████▋   | 129/194 [00:46<00:12,  5.24it/s]\n 67%|██████▋   | 130/194 [00:46<00:11,  5.60it/s]\n 68%|██████▊   | 131/194 [00:46<00:10,  5.89it/s]\n 68%|██████▊   | 132/194 [00:47<00:11,  5.24it/s]\n 69%|██████▊   | 133/194 [00:47<00:11,  5.23it/s]\n 69%|██████▉   | 134/194 [00:47<00:10,  5.60it/s]\n 70%|██████▉   | 135/194 [00:47<00:09,  5.91it/s]\n 70%|███████   | 136/194 [00:47<00:10,  5.47it/s]/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/face_alignment/api.py:215: UserWarning: No faces were detected.\n  warnings.warn(\"No faces were detected.\")\n\n 70%|███████   | 136/194 [00:48<00:20,  2.83it/s]\nTraceback (most recent call last):\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 650, in <module>\n    full = merge_face_contour_only(original_background, T_input_frame[2], T_ori_face_coordinates[2][1],fa)   #(H,W,3)\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 177, in merge_face_contour_only\n    preds = fa.get_landmarks(input_img)[0]  # 68x2\nTypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa_retry",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_092246_98c6272d",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092246_98c6272d/latentsync_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa_retry",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_092247_24b9473d",
+      "status": "error",
+      "phase": "error",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092247_24b9473d/source_with_vietnamese_audio.mp4",
+      "error": "Command failed with exit code 1: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092247_24b9473d/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092247_24b9473d/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092247_24b9473d/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092247_24b9473d/loratalk/mouth_aperture_debug.json\n 60%|█████▉    | 116/194 [00:44<00:17,  4.53it/s]\n 60%|██████    | 117/194 [00:44<00:15,  5.00it/s]\n 61%|██████    | 118/194 [00:44<00:14,  5.40it/s]\n 61%|██████▏   | 119/194 [00:44<00:14,  5.32it/s]\n 62%|██████▏   | 120/194 [00:45<00:15,  4.91it/s]\n 62%|██████▏   | 121/194 [00:45<00:13,  5.35it/s]\n 63%|██████▎   | 122/194 [00:45<00:12,  5.71it/s]\n 63%|██████▎   | 123/194 [00:45<00:11,  6.00it/s]\n 64%|██████▍   | 124/194 [00:45<00:13,  5.28it/s]\n 64%|██████▍   | 125/194 [00:46<00:13,  5.24it/s]\n 65%|██████▍   | 126/194 [00:46<00:13,  5.16it/s]\n 65%|██████▌   | 127/194 [00:46<00:12,  5.17it/s]\n 66%|██████▌   | 128/194 [00:46<00:13,  4.82it/s]\n 66%|██████▋   | 129/194 [00:46<00:12,  5.26it/s]\n 67%|██████▋   | 130/194 [00:47<00:11,  5.52it/s]\n 68%|██████▊   | 131/194 [00:47<00:11,  5.61it/s]\n 68%|██████▊   | 132/194 [00:47<00:12,  5.06it/s]\n 69%|██████▊   | 133/194 [00:47<00:11,  5.09it/s]\n 69%|██████▉   | 134/194 [00:47<00:10,  5.48it/s]\n 70%|██████▉   | 135/194 [00:47<00:10,  5.84it/s]\n 70%|███████   | 136/194 [00:48<00:10,  5.56it/s]/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/face_alignment/api.py:215: UserWarning: No faces were detected.\n  warnings.warn(\"No faces were detected.\")\n\n 70%|███████   | 136/194 [00:48<00:20,  2.82it/s]\nTraceback (most recent call last):\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 650, in <module>\n    full = merge_face_contour_only(original_background, T_input_frame[2], T_ori_face_coordinates[2][1],fa)   #(H,W,3)\n  File \"/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py\", line 177, in merge_face_contour_only\n    preds = fa.get_landmarks(input_img)[0]  # 68x2\nTypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa_retry",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_094433_13b74432",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094433_13b74432/loratalk_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa_retry",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_094434_c6d487f2",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/latentsync_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "bbc_odesa",
+      "submitted_clip": "bbc_odesa_retry",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_094435_dcba4bbb",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094435_dcba4bbb/loratalk_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "vt_schools",
+      "submitted_clip": "vt_schools_retry",
+      "lip_model": "loratalk_paa",
+      "job_id": "20260827_093447_d49b207d",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093447_d49b207d/loratalk_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "vt_schools",
+      "submitted_clip": "vt_schools_retry",
+      "lip_model": "latentsync_16",
+      "job_id": "20260827_093447_c7701e2f",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093447_c7701e2f/latentsync_translated_face.mp4",
+      "error": null
+    },
+    {
+      "clip": "vt_schools",
+      "submitted_clip": "vt_schools_retry",
+      "lip_model": "iplap_classic",
+      "job_id": "20260827_093447_8a8a6ad7",
+      "status": "done",
+      "phase": "done",
+      "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093447_8a8a6ad7/loratalk_translated_face.mp4",
+      "error": null
+    }
+  ]
+}
