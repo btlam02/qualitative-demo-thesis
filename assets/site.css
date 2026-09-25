@@ -46,8 +46,6 @@ details > .table-wrap { border:0; border-top:1px solid var(--line); border-radiu
 .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:16px; }
 #endtoend .cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
 #endtoend .cards > article:last-child { display:none; }
-#endtoend > details:nth-of-type(2),
-#endtoend > details:nth-of-type(5) { display:none; }
 #tts .cards { grid-template-columns:repeat(5,minmax(0,1fr)); }
 .matrix-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; }
 .video-matrix { display:grid; grid-template-columns:repeat(6,minmax(235px,1fr)); min-width:1410px; }
