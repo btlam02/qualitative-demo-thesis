@@ -1,0 +1,101 @@
+{
+  "job_dir": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97",
+  "input_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/input.mp4",
+  "prepared_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/prepared_25fps.mp4",
+  "english_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/english_16k.wav",
+  "vietnamese_audio_raw": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/vietnamese_tts_raw.wav",
+  "vietnamese_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/vietnamese_tts_aligned.wav",
+  "source_with_vietnamese_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/source_with_vietnamese_audio.mp4",
+  "loratalk_video_raw": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/latentsync_raw.mp4",
+  "loratalk_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/latentsync_translated_face.mp4",
+  "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/latentsync_translated_face.mp4",
+  "transcript_en": "Poland's Prime Minister, Donald Tusk, says an object that crashed into a field in eastern Poland,",
+  "translation_vi": "Thủ tướng Ba Lan, Donald Tusk, nói một vật thể đã rơi vào một cánh đồng ở phía đông Ba Lan,",
+  "source_media": {
+    "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/input.mp4",
+    "duration_seconds": 8.001,
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "frames": 200
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 48000,
+      "channels": 2
+    },
+    "has_video": true,
+    "has_audio": true
+  },
+  "prepared_media": {
+    "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/prepared_25fps.mp4",
+    "duration_seconds": 8.0,
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "frames": 200
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 16000,
+      "channels": 1
+    },
+    "has_video": true,
+    "has_audio": true
+  },
+  "face_identity": {
+    "method": "mediapipe_face_mesh",
+    "video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/prepared_25fps.mp4",
+    "skipped": true,
+    "skip_reason": "optional dependency missing: mediapipe",
+    "total_frames": 0,
+    "fps": null,
+    "sample_interval_frames": 5,
+    "sampled_frames": 0,
+    "detected_frames": 0,
+    "detected_ratio": 1.0,
+    "multiple_face_frames": 0,
+    "multiple_face_ratio": 0.0,
+    "mean_face_area_ratio": 0.0,
+    "face_center_jitter": 0.0,
+    "passed": true
+  },
+  "audio_alignment": {
+    "enabled": true,
+    "input_duration_seconds": 4.8,
+    "target_duration_seconds": 8.0,
+    "output_duration_seconds": 8.0,
+    "tempo": 0.6,
+    "filters": [
+      "aresample=async=1:first_pts=0",
+      "atempo=0.600000",
+      "apad",
+      "atrim=0:8.000000"
+    ]
+  },
+  "final_media": {
+    "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/latentsync_translated_face.mp4",
+    "duration_seconds": 8.0,
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "frames": 200
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 16000,
+      "channels": 1
+    },
+    "has_video": true,
+    "has_audio": true
+  },
+  "metadata_json": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/metadata.json",
+  "log_file": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_092414_44ee9b97/pipeline.log",
+  "duration_seconds": 252.4927682876587
+}

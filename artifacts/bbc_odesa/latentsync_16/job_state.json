@@ -1,0 +1,177 @@
+{
+  "id": "20260827_094434_c6d487f2",
+  "status": "done",
+  "phase": "done",
+  "detail": "Hoan tat.",
+  "created_at": 1787798674.20586,
+  "updated_at": 1787800787.9956975,
+  "transcript_en": "and feel what it's like to live here in one of Ukraine's most famous cities.",
+  "translation_vi": "và cảm nhận được cảm giác như thế nào khi sống ở đây trong một trong những thành phố nổi tiếng nhất của Ukraine.",
+  "model": {
+    "lip": {
+      "id": "latentsync_16",
+      "name": "LatentSync 1.6",
+      "short_name": "LatentSync",
+      "description": "Mô hình Latent Diffusion đối chứng chất lượng cao.",
+      "landmark_checkpoint": null,
+      "renderer_checkpoint": null,
+      "backend": "latentsync",
+      "wav2lip_dir": null,
+      "wav2lip_checkpoint": null,
+      "latentsync_dir": "/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync",
+      "latentsync_checkpoint": "/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/checkpoints/latentsync_unet.pt",
+      "latentsync_unet_config": "/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/LatentSync/configs/unet/stage2_512.yaml",
+      "musetalk_dir": null,
+      "musetalk_unet": null,
+      "musetalk_unet_config": null,
+      "badge": "Diffusion",
+      "recommended": false,
+      "available": true
+    },
+    "asr": {
+      "id": "whisper_small",
+      "name": "Whisper Small",
+      "model": "openai/whisper-small",
+      "description": "Nhận dạng giọng nói cân bằng tốc độ và độ chính xác.",
+      "source_lang": "eng_Latn",
+      "target_lang": "vie_Latn",
+      "recommended": true
+    },
+    "translation": {
+      "id": "nllb_distilled",
+      "name": "NLLB 200 Distilled 600M",
+      "model": "facebook/nllb-200-distilled-600M",
+      "description": "Dịch máy neural chất lượng cao chạy offline.",
+      "source_lang": "eng_Latn",
+      "target_lang": "vie_Latn",
+      "recommended": true
+    },
+    "tts": {
+      "id": "voxcpm2_clone",
+      "name": "VoxCPM2 Voice Clone",
+      "model": "openbmb/VoxCPM2",
+      "description": "Nhân bản giọng nói tiếng Việt từ âm thanh video gốc.",
+      "source_lang": "eng_Latn",
+      "target_lang": "vie_Latn",
+      "recommended": true
+    },
+    "run_loratalk": true,
+    "lip_backend": "latentsync",
+    "loratalk_mouth_open_scale": 1.1,
+    "loratalk_mouth_temporal_smooth": 0.25
+  },
+  "error": null,
+  "files": {
+    "prepared_video": "/files/20260827_094434_c6d487f2/prepared_25fps.mp4",
+    "english_audio": "/files/20260827_094434_c6d487f2/english_16k.wav",
+    "vietnamese_audio_raw": "/files/20260827_094434_c6d487f2/vietnamese_tts_raw.wav",
+    "vietnamese_audio": "/files/20260827_094434_c6d487f2/vietnamese_tts_aligned.wav",
+    "source_with_vietnamese_audio": "/files/20260827_094434_c6d487f2/source_with_vietnamese_audio.mp4",
+    "loratalk_video_raw": "/files/20260827_094434_c6d487f2/latentsync_raw.mp4",
+    "loratalk_video": "/files/20260827_094434_c6d487f2/latentsync_translated_face.mp4",
+    "final_video": "/files/20260827_094434_c6d487f2/latentsync_translated_face.mp4",
+    "metadata_json": "/files/20260827_094434_c6d487f2/metadata.json",
+    "log_file": "/files/20260827_094434_c6d487f2/pipeline.log"
+  },
+  "result": {
+    "job_dir": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2",
+    "input_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/input.mp4",
+    "prepared_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/prepared_25fps.mp4",
+    "english_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/english_16k.wav",
+    "vietnamese_audio_raw": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/vietnamese_tts_raw.wav",
+    "vietnamese_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/vietnamese_tts_aligned.wav",
+    "source_with_vietnamese_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/source_with_vietnamese_audio.mp4",
+    "loratalk_video_raw": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/latentsync_raw.mp4",
+    "loratalk_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/latentsync_translated_face.mp4",
+    "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/latentsync_translated_face.mp4",
+    "transcript_en": "and feel what it's like to live here in one of Ukraine's most famous cities.",
+    "translation_vi": "và cảm nhận được cảm giác như thế nào khi sống ở đây trong một trong những thành phố nổi tiếng nhất của Ukraine.",
+    "source_media": {
+      "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/input.mp4",
+      "duration_seconds": 5.0,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 25.0,
+        "frames": 125
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 48000,
+        "channels": 2
+      },
+      "has_video": true,
+      "has_audio": true
+    },
+    "prepared_media": {
+      "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/prepared_25fps.mp4",
+      "duration_seconds": 5.0,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 25.0,
+        "frames": 125
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 16000,
+        "channels": 1
+      },
+      "has_video": true,
+      "has_audio": true
+    },
+    "face_identity": {
+      "method": "mediapipe_face_mesh",
+      "video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/prepared_25fps.mp4",
+      "skipped": true,
+      "skip_reason": "optional dependency missing: mediapipe",
+      "total_frames": 0,
+      "fps": null,
+      "sample_interval_frames": 5,
+      "sampled_frames": 0,
+      "detected_frames": 0,
+      "detected_ratio": 1.0,
+      "multiple_face_frames": 0,
+      "multiple_face_ratio": 0.0,
+      "mean_face_area_ratio": 0.0,
+      "face_center_jitter": 0.0,
+      "passed": true
+    },
+    "audio_alignment": {
+      "enabled": true,
+      "input_duration_seconds": 4.96,
+      "target_duration_seconds": 5.0,
+      "output_duration_seconds": 5.0,
+      "tempo": 0.992,
+      "filters": [
+        "aresample=async=1:first_pts=0",
+        "atempo=0.992000",
+        "apad",
+        "atrim=0:5.000000"
+      ]
+    },
+    "final_media": {
+      "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/latentsync_translated_face.mp4",
+      "duration_seconds": 5.0,
+      "video": {
+        "codec": "h264",
+        "width": 1280,
+        "height": 720,
+        "fps": 25.0,
+        "frames": 125
+      },
+      "audio": {
+        "codec": "aac",
+        "sample_rate": 16000,
+        "channels": 1
+      },
+      "has_video": true,
+      "has_audio": true
+    },
+    "metadata_json": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/metadata.json",
+    "log_file": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_094434_c6d487f2/pipeline.log",
+    "duration_seconds": 181.42411351203918
+  }
+}

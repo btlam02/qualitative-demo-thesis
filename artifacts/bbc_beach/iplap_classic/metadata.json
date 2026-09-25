@@ -1,0 +1,101 @@
+{
+  "job_dir": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296",
+  "input_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/input.mp4",
+  "prepared_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/prepared_25fps.mp4",
+  "english_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/english_16k.wav",
+  "vietnamese_audio_raw": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/vietnamese_tts_raw.wav",
+  "vietnamese_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/vietnamese_tts_aligned.wav",
+  "source_with_vietnamese_audio": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/source_with_vietnamese_audio.mp4",
+  "loratalk_video_raw": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/loratalk/prepared_25fpsresult_N_25_Nl_15.mp4",
+  "loratalk_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/loratalk_translated_face.mp4",
+  "final_video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/loratalk_translated_face.mp4",
+  "transcript_en": "in a drone attack on a Russian seaside resort. Ukraine has so far not commented on today's strike, but there clearly has been a",
+  "translation_vi": "Ukraine cho đến nay đã không bình luận về cuộc tấn công hôm nay, nhưng rõ ràng đã có một cuộc tấn công",
+  "source_media": {
+    "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/input.mp4",
+    "duration_seconds": 8.0,
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "frames": 200
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 48000,
+      "channels": 2
+    },
+    "has_video": true,
+    "has_audio": true
+  },
+  "prepared_media": {
+    "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/prepared_25fps.mp4",
+    "duration_seconds": 8.0,
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "frames": 200
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 16000,
+      "channels": 1
+    },
+    "has_video": true,
+    "has_audio": true
+  },
+  "face_identity": {
+    "method": "mediapipe_face_mesh",
+    "video": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/prepared_25fps.mp4",
+    "skipped": true,
+    "skip_reason": "optional dependency missing: mediapipe",
+    "total_frames": 0,
+    "fps": null,
+    "sample_interval_frames": 5,
+    "sampled_frames": 0,
+    "detected_frames": 0,
+    "detected_ratio": 1.0,
+    "multiple_face_frames": 0,
+    "multiple_face_ratio": 0.0,
+    "mean_face_area_ratio": 0.0,
+    "face_center_jitter": 0.0,
+    "passed": true
+  },
+  "audio_alignment": {
+    "enabled": true,
+    "input_duration_seconds": 5.12,
+    "target_duration_seconds": 8.0,
+    "output_duration_seconds": 8.0,
+    "tempo": 0.64,
+    "filters": [
+      "aresample=async=1:first_pts=0",
+      "atempo=0.640000",
+      "apad",
+      "atrim=0:8.000000"
+    ]
+  },
+  "final_media": {
+    "path": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/loratalk_translated_face.mp4",
+    "duration_seconds": 8.0,
+    "video": {
+      "codec": "h264",
+      "width": 1280,
+      "height": 720,
+      "fps": 25.0,
+      "frames": 200
+    },
+    "audio": {
+      "codec": "aac",
+      "sample_rate": 16000,
+      "channels": 1
+    },
+    "has_video": true,
+    "has_audio": true
+  },
+  "metadata_json": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/metadata.json",
+  "log_file": "/home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_091005_3232f296/pipeline.log",
+  "duration_seconds": 107.91070079803467
+}

@@ -1,0 +1,245 @@
+[2026-08-27 10:04:31] probe: Doc thong tin video dau vao va kiem tra stream.
+$ ffprobe -v error -print_format json -show_format -show_streams /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/input.mp4
+[2026-08-27 10:04:31] prepare: Chuan hoa video dau vao (8.0s) va 25 FPS.
+$ ffmpeg -y -hide_banner -loglevel warning -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/input.mp4 -t 8.000 -r 25 -c:v libx264 -preset veryfast -pix_fmt yuv420p -c:a aac -ac 1 -ar 16000 /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/prepared_25fps.mp4
+$ ffprobe -v error -print_format json -show_format -show_streams /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/prepared_25fps.mp4
+[2026-08-27 10:04:31] identity_check: Kiem tra track khuon mat don de giu danh tinh khi render.
+[2026-08-27 10:04:31] extract_audio: Tach audio tieng Anh 16000 Hz mono tu video.
+$ ffmpeg -y -hide_banner -loglevel warning -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/prepared_25fps.mp4 -vn -ac 1 -ar 16000 -acodec pcm_s16le /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/english_16k.wav
+[2026-08-27 10:04:31] asr: Nhan dang tieng Anh bang openai/whisper-small.
+[2026-08-27 10:04:32] translate: Dich sang tieng Viet bang facebook/nllb-200-distilled-600M.
+[2026-08-27 10:04:35] tts: Tong hop giong noi tieng Viet bang openbmb/VoxCPM2 (device=cpu; NVIDIA GeForce RTX 5070 Ti uses sm_120, but this PyTorch build supports sm_50,sm_60,sm_70,sm_75,sm_80,sm_86,sm_90; chars=110).
+$ ffprobe -v error -print_format json -show_format -show_streams /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_raw.wav
+$ ffmpeg -y -hide_banner -loglevel warning -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_raw.wav -af aresample=async=1:first_pts=0,atempo=0.640000,apad,atrim=0:8.000000 -ac 1 -ar 16000 -acodec pcm_s16le /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_aligned.wav
+[aist#0:0/pcm_s16le @ 0x5a9fadd73100] Guessed Channel Layout: mono
+$ ffprobe -v error -print_format json -show_format -show_streams /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_aligned.wav
+[2026-08-27 10:05:20] audio_align: Da can thoi luong audio tieng Viet voi video nguon (5.12s -> 8.00s).
+[2026-08-27 10:05:20] mux_source: Tao video goc voi audio tieng Viet de doi chieu nhanh.
+$ ffmpeg -y -hide_banner -loglevel warning -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/prepared_25fps.mp4 -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_aligned.wav -map 0:v:0 -map 1:a:0 -shortest -c:v copy -c:a aac /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/source_with_vietnamese_audio.mp4
+[aist#1:0/pcm_s16le @ 0x628446f72b00] Guessed Channel Layout: mono
+[2026-08-27 10:05:20] loratalk: Goi IP-LAP voi checkpoint LoRA ViLAP de render moi noi.
+$ /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/bin/python /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/inference_single.py --input /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/prepared_25fps.mp4 --audio /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_aligned.wav --output_dir /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk --landmark_gen_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth --renderer_checkpoint_path /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth --mouth_open_scale 1.100 --mouth_temporal_smooth 0.250 --debug_landmark_path /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk/mouth_aperture_debug.json
+ landmark_generator_model loaded from :  /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth
+Load checkpoint from: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/landmark_pretrain.pth
+ renderer loaded from :  /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth
+/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/env/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=VGG19_Weights.IMAGENET1K_V1`. You can also use `weights=VGG19_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Perceptual loss:
+	Mode: vgg19
+Load checkpoint from: /home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRA-Talk/checkpoints/pretrained/renderer_checkpoint.pth
+Reading video frames ... from /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/prepared_25fps.mp4
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787799925.844898 2434227 gl_context_egl.cc:85] Successfully initialized EGL. Major : 1 Minor: 5
+I0000 00:00:1787799925.884474 2434327 gl_context.cc:344] GL version: 3.2 (OpenGL ES 3.2 NVIDIA 595.84), renderer: NVIDIA GeForce RTX 5070 Ti/PCIe/SSE2
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+  0%|          | 0/194 [00:00<?, ?it/s]/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/models/video_renderer.py:179: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+  return torch.nn.functional.grid_sample(source_image, deformation)
+
+  1%|          | 1/194 [00:11<37:44, 11.73s/it]/home/i86/WorkingSpace/Lbeos/Thesis/LipSync/LoRATalk/third_party/IP_LAP/models/video_renderer.py:179: UserWarning: Default grid_sample and affine_grid behavior has changed to align_corners=False since 1.3.0. Please specify align_corners=True if the old behavior is desired. See the documentation of grid_sample for details.
+  return torch.nn.functional.grid_sample(source_image, deformation)
+
+  1%|          | 2/194 [00:11<15:49,  4.94s/it]
+  2%|▏         | 3/194 [00:12<08:50,  2.78s/it]
+  2%|▏         | 4/194 [00:12<05:30,  1.74s/it]
+  3%|▎         | 5/194 [00:12<03:46,  1.20s/it]
+  3%|▎         | 6/194 [00:12<02:44,  1.15it/s]
+  4%|▎         | 7/194 [00:13<02:08,  1.45it/s]
+  4%|▍         | 8/194 [00:13<01:50,  1.68it/s]
+  5%|▍         | 9/194 [00:13<01:29,  2.07it/s]
+  5%|▌         | 10/194 [00:13<01:15,  2.45it/s]
+  6%|▌         | 11/194 [00:14<01:28,  2.06it/s]
+  6%|▌         | 12/194 [00:14<01:23,  2.18it/s]
+  7%|▋         | 13/194 [00:15<01:11,  2.55it/s]
+  7%|▋         | 14/194 [00:15<01:06,  2.73it/s]
+  8%|▊         | 15/194 [00:15<00:59,  3.02it/s]
+  8%|▊         | 16/194 [00:15<00:52,  3.42it/s]
+  9%|▉         | 17/194 [00:16<00:49,  3.55it/s]
+  9%|▉         | 18/194 [00:16<00:47,  3.71it/s]
+ 10%|▉         | 19/194 [00:16<00:43,  4.07it/s]
+ 10%|█         | 20/194 [00:16<00:40,  4.34it/s]
+ 11%|█         | 21/194 [00:17<00:37,  4.57it/s]
+ 11%|█▏        | 22/194 [00:17<00:34,  5.05it/s]
+ 12%|█▏        | 23/194 [00:17<00:35,  4.75it/s]
+ 12%|█▏        | 24/194 [00:17<00:37,  4.52it/s]
+ 13%|█▎        | 25/194 [00:17<00:35,  4.71it/s]
+ 13%|█▎        | 26/194 [00:18<00:35,  4.77it/s]
+ 14%|█▍        | 27/194 [00:18<00:33,  4.92it/s]
+ 14%|█▍        | 28/194 [00:18<00:31,  5.32it/s]
+ 15%|█▍        | 29/194 [00:18<00:31,  5.17it/s]
+ 15%|█▌        | 30/194 [00:18<00:34,  4.75it/s]
+ 16%|█▌        | 31/194 [00:19<00:31,  5.21it/s]
+ 16%|█▋        | 32/194 [00:19<00:31,  5.19it/s]
+ 17%|█▋        | 33/194 [00:19<00:28,  5.60it/s]
+ 18%|█▊        | 34/194 [00:19<00:27,  5.91it/s]
+ 18%|█▊        | 35/194 [00:19<00:25,  6.16it/s]
+ 19%|█▊        | 36/194 [00:19<00:25,  6.29it/s]
+ 19%|█▉        | 37/194 [00:20<00:28,  5.47it/s]
+ 20%|█▉        | 38/194 [00:20<00:27,  5.62it/s]
+ 20%|██        | 39/194 [00:20<00:26,  5.95it/s]
+ 21%|██        | 40/194 [00:20<00:25,  6.15it/s]
+ 21%|██        | 41/194 [00:20<00:25,  6.11it/s]
+ 22%|██▏       | 42/194 [00:20<00:24,  6.31it/s]
+ 22%|██▏       | 43/194 [00:21<00:26,  5.76it/s]
+ 23%|██▎       | 44/194 [00:21<00:25,  5.99it/s]
+ 23%|██▎       | 45/194 [00:21<00:23,  6.21it/s]
+ 24%|██▎       | 46/194 [00:21<00:25,  5.70it/s]
+ 24%|██▍       | 47/194 [00:21<00:25,  5.85it/s]
+ 25%|██▍       | 48/194 [00:21<00:26,  5.61it/s]
+ 25%|██▌       | 49/194 [00:22<00:27,  5.36it/s]
+ 26%|██▌       | 50/194 [00:22<00:25,  5.71it/s]
+ 26%|██▋       | 51/194 [00:22<00:24,  5.85it/s]
+ 27%|██▋       | 52/194 [00:22<00:23,  6.07it/s]
+ 27%|██▋       | 53/194 [00:22<00:24,  5.80it/s]
+ 28%|██▊       | 54/194 [00:22<00:24,  5.60it/s]
+ 28%|██▊       | 55/194 [00:23<00:25,  5.51it/s]
+ 29%|██▉       | 56/194 [00:23<00:23,  5.81it/s]
+ 29%|██▉       | 57/194 [00:23<00:29,  4.71it/s]
+ 30%|██▉       | 58/194 [00:23<00:28,  4.85it/s]
+ 30%|███       | 59/194 [00:23<00:27,  4.96it/s]
+ 31%|███       | 60/194 [00:24<00:31,  4.29it/s]
+ 31%|███▏      | 61/194 [00:24<00:31,  4.25it/s]
+ 32%|███▏      | 62/194 [00:25<00:47,  2.76it/s]
+ 32%|███▏      | 63/194 [00:25<00:42,  3.08it/s]
+ 33%|███▎      | 64/194 [00:25<00:37,  3.50it/s]
+ 34%|███▎      | 65/194 [00:25<00:34,  3.69it/s]
+ 34%|███▍      | 66/194 [00:26<00:49,  2.58it/s]
+ 35%|███▍      | 67/194 [00:26<00:46,  2.76it/s]
+ 35%|███▌      | 68/194 [00:27<00:40,  3.07it/s]
+ 36%|███▌      | 69/194 [00:27<00:40,  3.12it/s]
+ 36%|███▌      | 70/194 [00:27<00:34,  3.55it/s]
+ 37%|███▋      | 71/194 [00:27<00:29,  4.14it/s]
+ 37%|███▋      | 72/194 [00:27<00:26,  4.56it/s]
+ 38%|███▊      | 73/194 [00:28<00:25,  4.75it/s]
+ 38%|███▊      | 74/194 [00:28<00:22,  5.23it/s]
+ 39%|███▊      | 75/194 [00:28<00:22,  5.25it/s]
+ 39%|███▉      | 76/194 [00:28<00:20,  5.66it/s]
+ 40%|███▉      | 77/194 [00:28<00:21,  5.55it/s]
+ 40%|████      | 78/194 [00:28<00:19,  5.88it/s]
+ 41%|████      | 79/194 [00:29<00:20,  5.68it/s]
+ 41%|████      | 80/194 [00:29<00:20,  5.55it/s]
+ 42%|████▏     | 81/194 [00:29<00:20,  5.45it/s]
+ 42%|████▏     | 82/194 [00:29<00:22,  4.99it/s]
+ 43%|████▎     | 83/194 [00:29<00:23,  4.69it/s]
+ 43%|████▎     | 84/194 [00:30<00:24,  4.49it/s]
+ 44%|████▍     | 85/194 [00:30<00:21,  5.01it/s]
+ 44%|████▍     | 86/194 [00:30<00:21,  5.07it/s]
+ 45%|████▍     | 87/194 [00:30<00:20,  5.12it/s]
+ 45%|████▌     | 88/194 [00:30<00:19,  5.53it/s]
+ 46%|████▌     | 89/194 [00:31<00:17,  5.85it/s]
+ 46%|████▋     | 90/194 [00:31<00:17,  6.09it/s]
+ 47%|████▋     | 91/194 [00:31<00:16,  6.12it/s]
+ 47%|████▋     | 92/194 [00:31<00:16,  6.30it/s]
+ 48%|████▊     | 93/194 [00:31<00:15,  6.44it/s]
+ 48%|████▊     | 94/194 [00:31<00:15,  6.51it/s]
+ 49%|████▉     | 95/194 [00:31<00:15,  6.59it/s]
+ 49%|████▉     | 96/194 [00:32<00:15,  6.47it/s]
+ 50%|█████     | 97/194 [00:32<00:14,  6.58it/s]
+ 51%|█████     | 98/194 [00:32<00:14,  6.65it/s]
+ 51%|█████     | 99/194 [00:32<00:15,  6.15it/s]
+ 52%|█████▏    | 100/194 [00:32<00:17,  5.24it/s]
+ 52%|█████▏    | 101/194 [00:32<00:17,  5.24it/s]
+ 53%|█████▎    | 102/194 [00:33<00:16,  5.65it/s]
+ 53%|█████▎    | 103/194 [00:33<00:15,  5.94it/s]
+ 54%|█████▎    | 104/194 [00:33<00:14,  6.05it/s]
+ 54%|█████▍    | 105/194 [00:33<00:14,  6.25it/s]
+ 55%|█████▍    | 106/194 [00:33<00:13,  6.31it/s]
+ 55%|█████▌    | 107/194 [00:33<00:13,  6.27it/s]
+ 56%|█████▌    | 108/194 [00:34<00:13,  6.42it/s]
+ 56%|█████▌    | 109/194 [00:34<00:13,  6.54it/s]
+ 57%|█████▋    | 110/194 [00:34<00:13,  6.08it/s]
+ 57%|█████▋    | 111/194 [00:34<00:13,  6.27it/s]
+ 58%|█████▊    | 112/194 [00:34<00:13,  6.19it/s]
+ 58%|█████▊    | 113/194 [00:34<00:12,  6.37it/s]
+ 59%|█████▉    | 114/194 [00:35<00:12,  6.39it/s]
+ 59%|█████▉    | 115/194 [00:35<00:13,  5.79it/s]
+ 60%|█████▉    | 116/194 [00:35<00:13,  5.93it/s]
+ 60%|██████    | 117/194 [00:35<00:12,  6.19it/s]
+ 61%|██████    | 118/194 [00:35<00:11,  6.36it/s]
+ 61%|██████▏   | 119/194 [00:35<00:12,  5.97it/s]
+ 62%|██████▏   | 120/194 [00:36<00:11,  6.18it/s]
+ 62%|██████▏   | 121/194 [00:36<00:11,  6.33it/s]
+ 63%|██████▎   | 122/194 [00:36<00:11,  6.21it/s]
+ 63%|██████▎   | 123/194 [00:36<00:11,  6.34it/s]
+ 64%|██████▍   | 124/194 [00:36<00:10,  6.48it/s]
+ 64%|██████▍   | 125/194 [00:36<00:12,  5.55it/s]
+ 65%|██████▍   | 126/194 [00:37<00:11,  5.87it/s]
+ 65%|██████▌   | 127/194 [00:37<00:11,  5.67it/s]
+ 66%|██████▌   | 128/194 [00:37<00:11,  5.97it/s]
+ 66%|██████▋   | 129/194 [00:37<00:10,  6.21it/s]
+ 67%|██████▋   | 130/194 [00:37<00:10,  6.35it/s]
+ 68%|██████▊   | 131/194 [00:37<00:10,  5.96it/s]
+ 68%|██████▊   | 132/194 [00:37<00:10,  6.19it/s]
+ 69%|██████▊   | 133/194 [00:38<00:09,  6.35it/s]
+ 69%|██████▉   | 134/194 [00:38<00:09,  6.50it/s]
+ 70%|██████▉   | 135/194 [00:38<00:08,  6.59it/s]
+ 70%|███████   | 136/194 [00:38<00:08,  6.66it/s]
+ 71%|███████   | 137/194 [00:38<00:09,  6.16it/s]
+ 71%|███████   | 138/194 [00:38<00:09,  6.12it/s]
+ 72%|███████▏  | 139/194 [00:39<00:09,  5.83it/s]
+ 72%|███████▏  | 140/194 [00:39<00:09,  5.94it/s]
+ 73%|███████▎  | 141/194 [00:39<00:08,  6.16it/s]
+ 73%|███████▎  | 142/194 [00:39<00:08,  6.31it/s]
+ 74%|███████▎  | 143/194 [00:39<00:07,  6.42it/s]
+ 74%|███████▍  | 144/194 [00:39<00:07,  6.50it/s]
+ 75%|███████▍  | 145/194 [00:40<00:07,  6.39it/s]
+ 75%|███████▌  | 146/194 [00:40<00:07,  6.48it/s]
+ 76%|███████▌  | 147/194 [00:40<00:07,  6.58it/s]
+ 76%|███████▋  | 148/194 [00:40<00:07,  6.10it/s]
+ 77%|███████▋  | 149/194 [00:40<00:07,  6.34it/s]
+ 77%|███████▋  | 150/194 [00:40<00:06,  6.50it/s]
+ 78%|███████▊  | 151/194 [00:41<00:07,  6.08it/s]
+ 78%|███████▊  | 152/194 [00:41<00:06,  6.31it/s]
+ 79%|███████▉  | 153/194 [00:41<00:06,  6.47it/s]
+ 79%|███████▉  | 154/194 [00:41<00:07,  5.57it/s]
+ 80%|███████▉  | 155/194 [00:41<00:07,  5.06it/s]
+ 80%|████████  | 156/194 [00:41<00:06,  5.46it/s]
+ 81%|████████  | 157/194 [00:42<00:06,  5.82it/s]
+ 81%|████████▏ | 158/194 [00:42<00:05,  6.10it/s]
+ 82%|████████▏ | 159/194 [00:42<00:05,  6.32it/s]
+ 82%|████████▏ | 160/194 [00:42<00:05,  6.48it/s]
+ 83%|████████▎ | 161/194 [00:42<00:05,  6.58it/s]
+ 84%|████████▎ | 162/194 [00:42<00:04,  6.65it/s]
+ 84%|████████▍ | 163/194 [00:42<00:04,  6.68it/s]
+ 85%|████████▍ | 164/194 [00:43<00:04,  6.17it/s]
+ 85%|████████▌ | 165/194 [00:43<00:04,  6.36it/s]
+ 86%|████████▌ | 166/194 [00:43<00:04,  5.81it/s]
+ 86%|████████▌ | 167/194 [00:43<00:04,  6.07it/s]
+ 87%|████████▋ | 168/194 [00:43<00:04,  6.28it/s]
+ 87%|████████▋ | 169/194 [00:43<00:03,  6.43it/s]
+ 88%|████████▊ | 170/194 [00:44<00:03,  6.25it/s]
+ 88%|████████▊ | 171/194 [00:44<00:03,  6.43it/s]
+ 89%|████████▊ | 172/194 [00:44<00:03,  5.55it/s]
+ 89%|████████▉ | 173/194 [00:44<00:04,  5.05it/s]
+ 90%|████████▉ | 174/194 [00:44<00:03,  5.45it/s]
+ 90%|█████████ | 175/194 [00:45<00:03,  5.84it/s]
+ 91%|█████████ | 176/194 [00:45<00:03,  5.68it/s]
+ 91%|█████████ | 177/194 [00:45<00:03,  4.67it/s]
+ 92%|█████████▏| 178/194 [00:45<00:03,  4.84it/s]
+ 92%|█████████▏| 179/194 [00:45<00:03,  4.94it/s]
+ 93%|█████████▎| 180/194 [00:46<00:02,  5.38it/s]
+ 93%|█████████▎| 181/194 [00:46<00:02,  5.77it/s]
+ 94%|█████████▍| 182/194 [00:46<00:01,  6.05it/s]
+ 94%|█████████▍| 183/194 [00:46<00:01,  6.27it/s]
+ 95%|█████████▍| 184/194 [00:46<00:01,  5.95it/s]
+ 95%|█████████▌| 185/194 [00:46<00:01,  6.20it/s]
+ 96%|█████████▌| 186/194 [00:46<00:01,  6.38it/s]
+ 96%|█████████▋| 187/194 [00:47<00:01,  6.52it/s]
+ 97%|█████████▋| 188/194 [00:47<00:01,  5.59it/s]
+ 97%|█████████▋| 189/194 [00:47<00:00,  5.90it/s]
+ 98%|█████████▊| 190/194 [00:47<00:00,  6.14it/s]
+ 98%|█████████▊| 191/194 [00:47<00:00,  6.32it/s]
+ 99%|█████████▉| 192/194 [00:47<00:00,  5.94it/s]
+ 99%|█████████▉| 193/194 [00:48<00:00,  6.18it/s]
+100%|██████████| 194/194 [00:48<00:00,  6.37it/s]
+100%|██████████| 194/194 [00:48<00:00,  4.02it/s]
+succeed output results to: /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk/prepared_25fpsresult_N_25_Nl_15.mp4
+[2026-08-27 10:06:17] postprocess: Cat nua phai video IP-LAP de lay ket qua render mat.
+$ ffmpeg -y -hide_banner -loglevel warning -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk/prepared_25fpsresult_N_25_Nl_15.mp4 -vf crop=iw/2:ih:iw/2:0 -c:v libx264 -preset veryfast -pix_fmt yuv420p -c:a aac /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk_face_crop.mp4
+[2026-08-27 10:06:18] postprocess: Can thoi luong video render va remux audio tieng Viet.
+$ ffmpeg -y -hide_banner -loglevel warning -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk_face_crop.mp4 -i /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/vietnamese_tts_aligned.wav -map 0:v:0 -map 1:a:0 -vf fps=25,tpad=stop_mode=clone:stop_duration=8.000000,trim=duration=8.000000,setpts=PTS-STARTPTS -af apad,atrim=0:8.000000,asetpts=PTS-STARTPTS -c:v libx264 -preset veryfast -pix_fmt yuv420p -c:a aac -ar 16000 /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk_translated_face.mp4
+[aist#1:0/pcm_s16le @ 0x645965b7ff80] Guessed Channel Layout: mono
+$ ffprobe -v error -print_format json -show_format -show_streams /home/i86/WorkingSpace/Lbeos/Thesis/LSApp/outputs/20260827_093446_9c80d6da/loratalk_translated_face.mp4
+[2026-08-27 10:06:18] done: Hoan tat pipeline dich video Anh-Viet.
